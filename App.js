@@ -16,7 +16,10 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+import { ApolloProvider } from '@apollo/react-hooks';
+import client from './src/utilities/Client';
+import AppNavigator from './src/navigation/AppNavigator';
+import { AuthProvider } from './src/contexts/authContext';
 import {
   Colors,
   DebugInstructions,
@@ -28,6 +31,7 @@ import {
 const Section = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
+    
         <View style={styles.sectionContainer}>
           <Text
             style={[
@@ -48,6 +52,7 @@ const Section = ({children, title}) => {
             {children}
           </Text>
         </View>
+     
       );
 };
 
@@ -59,7 +64,9 @@ const App = () => {
   };
 
   return (
-        <SafeAreaView style={backgroundStyle}>
+    <ApolloProvider client={client}> 
+      <AuthProvider> 
+        {/* <SafeAreaView style={backgroundStyle}>
           <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
             <View
             style={{
@@ -70,7 +77,10 @@ const App = () => {
                 screen and then come back to see your edits.
               </Section>
             </View>
-        </SafeAreaView>
+        </SafeAreaView> */}
+        <AppNavigator/>
+      </AuthProvider>
+    </ApolloProvider>  
   );
 };
  

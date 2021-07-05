@@ -218,13 +218,13 @@ const PatientHealthCheck = ({ navigation }) => {
               Click Image 
             </Text>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           activeOpacity={0.5}
           style={styles.buttonStyle2}
           onPress={() => chooseFile('photo')}
         >
           <Text style={styles.textStyle}>Choose Image</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
           activeOpacity={0.5}
           style={styles.buttonStyle3}

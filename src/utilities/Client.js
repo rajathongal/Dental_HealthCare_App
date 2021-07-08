@@ -11,7 +11,7 @@ const cache = new InMemoryCache();
 
 const httpLink = (port) => {
     return new HttpLink({
-        uri: `http://34.117.29.78/graphql`,
+        uri: `https://dentocare.club/graphql`,
         credentials: 'include',
        
     });

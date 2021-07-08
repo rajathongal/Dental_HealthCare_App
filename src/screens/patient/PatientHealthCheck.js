@@ -162,7 +162,7 @@ const PatientHealthCheck = ({ navigation }) => {
     };
     
     try {
-      const response = await axios.post('http://34.117.29.78/yolo', formData, optionsImage);
+      const response = await axios.post('https://dentocare.club/yolo', formData, optionsImage);
 
       if(!(response === undefined)) {
         var base64Flag = `data:${Object.values(response.headers)[4]};base64,`;
